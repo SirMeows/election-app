@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import special.person.templbackend.entity.Party;
 import special.person.templbackend.entity.PartyBuilder;
 import special.person.templbackend.repository.PartyRepository;
-
 import java.util.ArrayList;
 import java.util.List;
 

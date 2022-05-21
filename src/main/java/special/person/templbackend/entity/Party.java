@@ -23,7 +23,7 @@ public class Party {
 
     private String name;
 
-    private String shortName;
+    private String tag;
 /*
     @JsonIgnore
     @OneToMany(mappedBy = "party", cascade = CascadeType.ALL, fetch = FetchType.EAGER)

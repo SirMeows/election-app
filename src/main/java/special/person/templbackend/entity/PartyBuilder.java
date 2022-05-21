@@ -14,11 +14,11 @@ public class PartyBuilder {
         return partyBuilder;
     }
 
-    public static PartyBuilder create(String name, String shortName) {
+    public static PartyBuilder create(String name, String tag) {
         var partyBuilder = new PartyBuilder();
         var party = new Party();
         party.setName(name);
-        party.setShortName(shortName);
+        party.setTag(tag);
         partyBuilder.setParty(party);
         return partyBuilder;
     }
@@ -32,14 +32,14 @@ public class PartyBuilder {
         return this;
     }
 
-    public PartyBuilder addShortName(String shortName) {
-        party.setName(shortName);
+    public PartyBuilder addTag(String tag) {
+        party.setName(tag);
         return this;
     }
 
     public PartyBuilder addAllFakeData() {
         party.setName("xxx party");
-        party.setShortName("XX");
+        party.setTag("XX");
         return this;
     }
 

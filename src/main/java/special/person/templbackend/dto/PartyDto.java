@@ -15,5 +15,5 @@ public class PartyDto {
 
     private String name;
 
-    private String shortName;
+    private String tag;
 }

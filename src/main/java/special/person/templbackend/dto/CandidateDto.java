@@ -17,5 +17,5 @@ public class CandidateDto {
 
     private String lastName;
 
-    private String partyName; // = "PARTY_NAME_PLACEHOLDER"; // TODO: Add configuration to ModelMapper for getting party name from Party entity
+    private String partyName;
 }

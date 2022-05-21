@@ -9,5 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class CandidateRequest {
+public class CandidateDto {
+
+    private Long id;
 }

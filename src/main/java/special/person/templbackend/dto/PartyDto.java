@@ -9,5 +9,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PartyRequest {
+public class PartyDto {
+
+    private Long id;
+
+    private String name;
+
+    private String shortName;
 }

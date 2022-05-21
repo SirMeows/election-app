@@ -11,13 +11,14 @@ import special.person.templbackend.service.CandidateService;
 
 import java.lang.reflect.Type;
 import java.util.Map;
+import java.util.Set;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/api/party")
+@RequestMapping("/api/parties")
 public class PartyController {
 
-    public static final Type LIST_TYPE = new TypeToken<Map<Long, PartyDto>>() {
+    public static final Type LIST_TYPE = new TypeToken<Set<PartyDto>>() {
     }.getType();
 
     private ModelMapper modelMapper;
@@ -27,9 +28,9 @@ public class PartyController {
     private CandidateService candidateService;
 
     @GetMapping
-    public Map<Long, PartyDto> getParties() {
-        Map<Long, Party> entities = partyService.getParties();
-        Map<Long, PartyDto> dtos = modelMapper.map(entities, LIST_TYPE);
+    public Set<PartyDto> getParties() {
+        var entities = partyService.getParties();
+        Set<PartyDto> dtos = modelMapper.map(entities.values(), LIST_TYPE);
         return dtos;
     }
 }

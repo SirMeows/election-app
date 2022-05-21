@@ -8,7 +8,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -24,8 +26,8 @@ public class Party {
     private String name;
 
     private String tag;
-/*
+
     @JsonIgnore
     @OneToMany(mappedBy = "party", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Map<Long, Candidate> candidates = new HashMap<>();*/
+    private Set<Candidate> candidates = new HashSet<>();
 }

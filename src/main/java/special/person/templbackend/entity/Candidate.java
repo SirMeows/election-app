@@ -22,6 +22,7 @@ public class Candidate {
 
     private String lastName;
 
-    //private Party party;
+    @ManyToOne
+    private Party party;
 }
 

@@ -12,4 +12,10 @@ import lombok.Setter;
 public class CandidateDto {
 
     private Long id;
+
+    //private Long partyId;
+
+    private String firstName;
+
+    private String lastName;
 }

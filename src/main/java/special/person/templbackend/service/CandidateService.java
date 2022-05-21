@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import special.person.templbackend.entity.Candidate;
 import special.person.templbackend.repository.CandidateRepository;
-import java.util.Map;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -13,8 +12,8 @@ public class CandidateService {
 
     private CandidateRepository candidateRepository;
 
-    public Map<Long, Candidate> getCandidates() {
-        return candidateRepository.findAllMap();
+    public Set<Candidate> getCandidates() {
+        return candidateRepository.findAllSet();
     }
 
     public Set<Candidate> getCandidatesByParty(Long partyId) {

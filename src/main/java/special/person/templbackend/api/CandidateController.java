@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import special.person.templbackend.dto.CandidateDto;
-import special.person.templbackend.dto.PartyDto;
 import special.person.templbackend.service.CandidateService;
 import java.lang.reflect.Type;
 import java.util.Set;
@@ -17,7 +16,7 @@ import java.util.Set;
 @RequestMapping("/api/candidates")
 public class CandidateController {
 
-    public static final Type LIST_TYPE_CANDIDATE_DTO = new TypeToken<Set<PartyDto>>() {
+    public static final Type LIST_TYPE_CANDIDATE_DTO = new TypeToken<Set<CandidateDto>>() {
     }.getType();
 
     ModelMapper modelMapper;

@@ -33,7 +33,7 @@ public class PartyController {
     @GetMapping
     public Set<PartyDto> getParties() {
         var entities = partyService.getParties();
-        Set<PartyDto> dtos = modelMapper.map(entities.values(), LIST_TYPE_PARTY_DTO);
+        Set<PartyDto> dtos = modelMapper.map(entities, LIST_TYPE_PARTY_DTO);
         return dtos;
     }
 

@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>special.person</groupId>
-    <artifactId>templ-backend</artifactId>
+    <artifactId>election-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>templ-backend</name>
-    <description>templ-backend</description>
+    <name>election-app</name>
+    <description>election-app</description>
     <properties>
         <java.version>11</java.version>
     </properties>

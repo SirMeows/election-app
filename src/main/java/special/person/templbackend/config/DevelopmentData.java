@@ -36,25 +36,46 @@ public class DevelopmentData implements ApplicationRunner {
     }
 
     private void makeCandidates() {
-        var c_1 = CandidateBuilder.create("Marcel", "Meijer", parties.get(0)).build();
-        var c_2 = CandidateBuilder.create("Helle", "Hansen", parties.get(0)).build();
-        var c_3 = CandidateBuilder.create("Sigfred", "Jensen", parties.get(1)).build();
-        var c_4 = CandidateBuilder.create("Per", "Hingel", parties.get(1)).build();
-        var c_5 = CandidateBuilder.create()
+
+        // Socialdemokratiet
+        var c_1_0 = CandidateBuilder.create("Marcel", "Meijer", parties.get(0)).build();
+        var c_2_0 = CandidateBuilder.create("Helle", "Hansen", parties.get(0)).build();
+        var c_3_0 = CandidateBuilder.create()
                 .addParty(parties.get(2))
                 .addFakeNames()
                 .build();
-        var c_6 = CandidateBuilder.create()
+
+        // Konservative
+        var c_1_1 = CandidateBuilder.create("Sigfred", "Jensen", parties.get(1)).build();
+        var c_2_1 = CandidateBuilder.create("Per", "Hingel", parties.get(1)).build();
+        var c_3_1 = CandidateBuilder.create()
+                .addParty(parties.get(1))
+                .addFakeNames()
+                .build();
+
+        // Socialisterne
+        var c_1_2 = CandidateBuilder.create("Ulla", "Holm", parties.get(2)).build();
+        var c_2_2 = CandidateBuilder.create("Lone", "Krag", parties.get(2)).build();
+        var c_3_2 = CandidateBuilder.create()
+                .addParty(parties.get(2))
+                .addFakeNames()
+                .build();
+
+        // Venstre
+        var c_1_3 = CandidateBuilder.create("Søren", "Wiese", parties.get(3)).build();
+        var c_2_3 = CandidateBuilder.create()
                 .addParty(parties.get(3))
                 .addFakeNames()
                 .build();
-        var c_7 = CandidateBuilder.create()
+
+        // Enhedslisten
+        var c_1_4 = CandidateBuilder.create("Pia", "Birkman", parties.get(4)).build();
+        var c_2_4 = CandidateBuilder.create()
                 .addParty(parties.get(4))
                 .addFakeNames()
                 .build();
 
-
-        candidates.addAll(List.of(c_1, c_2, c_3, c_4, c_5, c_6,c_7));
+        candidates.addAll(List.of(c_1_0, c_2_0, c_3_0, c_1_1, c_2_1, c_3_1, c_1_2, c_2_2, c_3_2, c_1_3, c_2_3, c_1_4, c_2_4));
         candidateRepository.saveAll(candidates);
     }
 

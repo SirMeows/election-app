@@ -30,8 +30,14 @@ public class CandidateController {
         return modelMapper.map(entity, CandidateDto.class);
     }
 
+    @GetMapping("/search/{searchTerm}")
+    Set<CandidateDto> getCandidateBySearchTerm(@PathVariable String searchTerm) {
+        var candidates = candidateService.getCandidateBySearchTerm(searchTerm);
+        return modelMapper.map(candidates, LIST_TYPE_CANDIDATE_DTO);
+    }
+
     @DeleteMapping("/{id}")
-    void deleteCandidate(@PathVariable Long id) {
+    void deleteCandidates(@PathVariable Long id) {
         candidateService.deleteCandidate(id);
     }
 }

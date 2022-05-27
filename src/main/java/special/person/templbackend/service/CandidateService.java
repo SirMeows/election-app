@@ -28,6 +28,10 @@ public class CandidateService {
         return candidate;
     }
 
+    public Set<Candidate> getCandidateBySearchTerm(String searchTerm) {
+        return candidateRepository.findByFirstNameOrLastName(searchTerm, searchTerm);
+    }
+
     public Candidate addCandidateToParty(Party party, Candidate newCandidate) {
         var fName = newCandidate.getFirstName();
         var lName = newCandidate.getLastName();

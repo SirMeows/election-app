@@ -9,7 +9,6 @@ import special.person.templbackend.entity.Candidate;
 import special.person.templbackend.service.PartyService;
 import special.person.templbackend.service.CandidateService;
 import java.util.Set;
-
 import static special.person.templbackend.config.ModelMapperConfig.LIST_TYPE_CANDIDATE_DTO;
 import static special.person.templbackend.config.ModelMapperConfig.LIST_TYPE_PARTY_DTO;
 

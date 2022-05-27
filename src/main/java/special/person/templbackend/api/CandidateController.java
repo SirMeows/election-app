@@ -2,9 +2,7 @@ package special.person.templbackend.api;
 
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import special.person.templbackend.dto.CandidateDto;
 import special.person.templbackend.service.CandidateService;
 import java.util.Set;
@@ -24,5 +22,16 @@ public class CandidateController {
         var entities = candidateService.getCandidates();
         Set<CandidateDto> dtos = modelMapper.map(entities, LIST_TYPE_CANDIDATE_DTO);
         return dtos;
+    }
+
+    @GetMapping("/{id}")
+    CandidateDto getCandidateById(@PathVariable Long id) {
+        var entity = candidateService.getCandidateById(id);
+        return modelMapper.map(entity, CandidateDto.class);
+    }
+
+    @DeleteMapping("/{id}")
+    void deleteCandidate(@PathVariable Long id) {
+        candidateService.deleteCandidate(id);
     }
 }

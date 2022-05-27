@@ -35,6 +35,7 @@ public class CandidateService {
         if(candidateRepository.existsByFirstNameAndLastNameAndParty(fName, lName, party)) {
             throw new CandidateAlreadyExistsException(fName, lName, party.getName());
         } else {
+            newCandidate.setParty(party);
             return candidateRepository.save(newCandidate);
         }
     }

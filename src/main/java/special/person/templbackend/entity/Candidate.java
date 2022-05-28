@@ -22,7 +22,7 @@ public class Candidate {
 
     private String lastName;
 
-    @ManyToOne
+    @ManyToOne()
     private Party party;
 }
 

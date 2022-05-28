@@ -10,6 +10,7 @@ import static special.person.templbackend.config.ModelMapperConfig.LIST_TYPE_CAN
 
 @AllArgsConstructor
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/candidates")
 public class CandidateController {
 
@@ -31,13 +32,13 @@ public class CandidateController {
     }
 
     @GetMapping("/search/{searchTerm}")
-    Set<CandidateDto> getCandidateBySearchTerm(@PathVariable String searchTerm) {
+    Set<CandidateDto> getCandidatesBySearchTerm(@PathVariable String searchTerm) {
         var candidates = candidateService.getCandidateBySearchTerm(searchTerm);
         return modelMapper.map(candidates, LIST_TYPE_CANDIDATE_DTO);
     }
 
     @DeleteMapping("/{id}")
-    void deleteCandidates(@PathVariable Long id) {
+    void deleteCandidate(@PathVariable Long id) {
         candidateService.deleteCandidate(id);
     }
 }

@@ -44,7 +44,20 @@ public class CandidateService {
         }
     }
 
+    //TODO: Find a better way to do this?
     public void deleteCandidate(Long id) {
-        candidateRepository.deleteById(id);
+        var candidateOpt = candidateRepository.findById(id);
+        if (candidateOpt.isPresent()) {
+            var candidate= candidateOpt.get();
+
+            candidate.getParty().getCandidates().remove(candidate);
+            candidate.setParty(null);
+
+            candidateRepository.save(candidate);
+
+            candidateRepository.delete(candidate);
+            candidateRepository.flush();
+        }
+
     }
 }

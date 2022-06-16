@@ -39,6 +39,6 @@ public class CandidateController {
 
     @DeleteMapping("/{id}")
     void deleteCandidate(@PathVariable Long id) {
-        candidateService.deleteCandidate(id);
+            candidateService.deleteCandidate(id);
     }
 }
